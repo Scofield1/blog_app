@@ -35,8 +35,6 @@ def register(request):
             form.save()
             messages.info(request, "You're Successful Registered")
             return redirect('login')
-        else:
-            messages.info(request, 'Sign Up before Log in')
     context = {'form': form}
     return render(request, 'users/register.html', context)
 
@@ -53,7 +51,7 @@ def login_page(request):
             login(request, user)
             return redirect('/')
         else:
-            messages.info(request, 'Invalid Credentials')
+            messages.error(request, 'Invalid Credentials')
     context = {}
     return render(request, 'users/login.html', context)
 
@@ -133,7 +131,15 @@ def create_blog(request):
             return redirect('/')
     else:
         form = CreateBlogForm()
+    if request.method == 'POST':
+        c_form = CategoryForm(request.POST or None)
+        if c_form.is_valid():
+            c_form.save()
+            return redirect('/')
+    else:
+        c_form = CategoryForm()
     context = {
-        'form': form
+        'form': form,
+        'c_form': c_form
     }
     return render(request, 'main/create_blog.html', context)

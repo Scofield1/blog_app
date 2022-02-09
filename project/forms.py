@@ -63,3 +63,13 @@ class CommentForm(forms.ModelForm):
         model = CommentModel
         fields = ['body']
 
+
+class CategoryForm(forms.ModelForm):
+    name = forms.CharField(label='', widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'aria-describedby': 'button-addon3',
+    }))
+
+    class Meta:
+        model = Category
+        fields = ['name']
