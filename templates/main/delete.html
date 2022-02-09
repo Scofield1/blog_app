@@ -1,0 +1,20 @@
+{% extends 'component/base.html' %}
+
+{% block title %} Delete Page  {% endblock title %}
+  {% block content %}
+  <section>
+      <div class="container">
+          <div class="row mt-5">
+              <div class="col-md-6 offset-md-3">
+                  <form method="POST">{% csrf_token %}
+                      <div class="alert alert-warning">
+                          Are you sure you want delete this?<br>
+                          <a href="/" class="btn btn-warning mt-2">Cancel</a>
+                          <input type="submit" class="btn btn-danger mt-2" value="Confirm">
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+  {% endblock content %}

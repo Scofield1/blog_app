@@ -1,0 +1,23 @@
+{% extends 'component/base.html' %}
+
+{% block title %} Log In Page  {% endblock title %}
+{% block content %}
+<section>
+    <div class="row my-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="bg-light p-3">
+                <h3>Log in</h3>
+                <hr>
+                <form method="POST" action="">{% csrf_token %}
+                    <p>Username:</p>
+                    <input type="text" name="username" class="form-control">
+                    <p>Password:</p>
+                    <input type="password" name="password" class="form-control">
+                    <input type="submit" value="Log In" class="btn btn-success btn-block mt-3">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
