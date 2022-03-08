@@ -21,7 +21,11 @@
         <div class="col-md-6 px-0">
             <h1 class="display-4 fst-italic">Start your blog story here with us</h1>
             <p class="lead my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed turpis at est sagittis ultricies nec non odio. Donec sagittis elit quis convallis euismod. Phasellus blandit sapien vel diam accumsan, at bibendum orci maximus</p>
+            {% if user.is_authenticated %}
+            <p class="lead mb-0"><a href="{% url 'create_blog' %}" class="btn-lg btn-success text-white text-decoration-none">Start Your Blog</a></p>
+            {% else %}
             <p class="lead mb-0"><a href="{% url 'register' %}" class="btn-lg btn-success text-white text-decoration-none">Get Started</a></p>
+            {% endif %}
         </div>
     </div>
 
