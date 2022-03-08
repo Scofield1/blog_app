@@ -1,11 +1,18 @@
 {% extends 'component/base.html' %}
 
+{% load static %}
 {% block title %} Sign Up Page {% endblock title %}
 {% load crispy_forms_tags %}
   {% block content %}
   <section>
-    <div class="row my-5">
-      <div class="col-md-6 offset-md-3">
+    <div class="container">
+      <div class="row my-5">
+      <div class="col-md-6">
+            <div class="p-3">
+                <img src="{% static 'img/profile_info.svg' %}" class="img-fluid" alt="" srcset="">
+            </div>
+        </div>
+      <div class="col-md-6">
         <div class="bg-light p-3">
           <div>
             <h3>Create Account</h3>
@@ -19,6 +26,7 @@
           <hr class="mt-4">
         </div>
       </div>
+    </div>
     </div>
   </section>
   {% endblock %}

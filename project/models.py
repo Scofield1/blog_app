@@ -32,10 +32,10 @@ class ProfileModel(models.Model):
     bio = models.TextField(blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
-    image = models.ImageField(default='default.jpg', upload_to='profile')
+    image = models.ImageField(default='profile_pic.svg', upload_to='profile')
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 
 class CommentModel(models.Model):

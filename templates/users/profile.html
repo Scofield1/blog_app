@@ -11,7 +11,15 @@
                     <div class="card-header bg">Profile Info</div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-4 mb-3">
+                                <img class="img-fluid rounded-circle"
+                                     src="{{ person.profilemodel.image.url }}">
+                                <div class="mt-3 text-center">
+                                    <h6><a href="{{ person.profilemodel.image.url }}" class="text-decoration-none text-success">View
+                                        Profile Picture</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
                                 <span class="h4">View Profile Info</span><span>
                             {% if request.user == person %}
                             <a href=""
@@ -50,14 +58,6 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="col-md-4">
-                                <img class="img-thumbnail"
-                                     src="{{ person.profilemodel.image.url }}">
-                                <div class="mt-3">
-                                    <h6><a href="{{ person.profilemodel.image.url }}" class="text-decoration-none text-success">View
-                                        Profile Picture</a></h6>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         </form>
                     </div>
                     <div class="col-md-4">
-                        <img class="img-thumbnail"
+                        <img class="img-fluid rounded-circle"
                              src="{{ user.profilemodel.image.url }}">
                     </div>
                 </div>

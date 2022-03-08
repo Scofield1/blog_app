@@ -1,10 +1,17 @@
 {% extends 'component/base.html' %}
 
+{% load static %}
 {% block title %} Log In Page  {% endblock title %}
 {% block content %}
 <section>
-    <div class="row my-5">
-        <div class="col-md-6 offset-md-3">
+    <div class="container">
+        <div class="row my-5">
+        <div class="col-md-6">
+            <div class="p-3">
+                <img src="{% static 'img/sign_in.svg' %}" class="img-fluid" alt="" srcset="">
+            </div>
+        </div>
+        <div class="col-md-6">
             <div class="bg-light p-3">
                 <h3>Log in</h3>
                 <hr>
@@ -24,6 +31,7 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
 </section>
 {% endblock %}
