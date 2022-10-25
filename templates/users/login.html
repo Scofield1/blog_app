@@ -22,7 +22,8 @@
                 </div>
                 {% endfor %}
                 {% endif %}
-                <form method="POST" action="">{% csrf_token %}
+                <form method="POST" action="">
+                    {% csrf_token %}
                     <p>Username:</p>
                     <input type="text" name="username" class="form-control">
                     <p>Password:</p>
