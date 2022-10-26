@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog_server',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Scofield',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PASSWORD': '7oMBIclGG0OMnJhbfuI3',
+        'HOST': 'containers-us-west-110.railway.app',
+        'PORT': '7599',
     }
 }
 
@@ -133,4 +133,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = 'assests'
-print('')
