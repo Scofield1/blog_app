@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': '7oMBIclGG0OMnJhbfuI3',
@@ -87,7 +87,7 @@ DATABASES = {
         'PORT': '7599',
     }
 }
-CSRF_TRUSTED_ORIGINS = "https://web-production-4884.up.railway.app/"
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -126,7 +126,7 @@ STATIC_URL = 'static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
+CSRF_TRUSTED_ORIGINS = ['https://web-production-4884.up.railway.app', 'https://*.127.0.0.1']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
