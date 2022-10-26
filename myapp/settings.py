@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-q&c!4rb)&u022m37p$l7r+3bc=k)f*gbt3ldcy)l0ysb%w6e8j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ["https://web-production-4884.up.railway.app/", "http://127.0.0.1:8000/"]
 ALLOWED_HOSTS = ['*']
 
 
@@ -80,15 +79,14 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blog_server',
         'USER': 'postgres',
-        'PASSWORD': '7oMBIclGG0OMnJhbfuI3',
-        'HOST': 'containers-us-west-110.railway.app',
-        'PORT': '7599',
+        'PASSWORD': 'Scofield',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
