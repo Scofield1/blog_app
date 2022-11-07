@@ -15,7 +15,7 @@ class BlogModel(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=200)
     body = RichTextField(null=True)
-    image = models.ImageField(upload_to='blog_img', null=True)
+    image = models.ImageField(upload_to='posts/blog_img', null=True)
     update = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -32,7 +32,7 @@ class ProfileModel(models.Model):
     bio = models.TextField(blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
-    image = models.ImageField(default='profile_pic.svg', upload_to='profile')
+    image = models.ImageField(default='media/profile_pic.svg', upload_to='profile')
 
     def __str__(self):
         return self.user.username
