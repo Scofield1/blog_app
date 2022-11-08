@@ -137,7 +137,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-# CSRF_TRUSTED_ORIGINS = ['https://web-production-4884.up.railway.app', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-4884.up.railway.app', 'https://*.127.0.0.1']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'

@@ -16,21 +16,26 @@
         {% endfor %}
     </nav>
 </div>
-<main class="container">
+<main>
+    <div class="container">
     <div class="p-4 p-md-5 mb-4 text-dark rounded bg">
         <div class="col-md-6 px-0">
             <h1 class="display-4 fst-italic">Start your blog story here with us</h1>
-            <p class="lead my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed turpis at est sagittis ultricies nec non odio. Donec sagittis elit quis convallis euismod. Phasellus blandit sapien vel diam accumsan, at bibendum orci maximus</p>
+            <p class="lead my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed turpis at est
+                sagittis ultricies nec non odio. Donec sagittis elit quis convallis euismod. Phasellus blandit sapien
+                vel diam accumsan, at bibendum orci maximus</p>
             {% if user.is_authenticated %}
-            <p class="lead mb-0"><a href="{% url 'create_blog' %}" class="btn-lg btn-success text-white text-decoration-none">Start Your Blog</a></p>
+            <p class="lead mb-0"><a href="{% url 'create_blog' %}"
+                                    class="btn-lg btn-success text-white text-decoration-none">Start Your Blog</a></p>
             {% else %}
-            <p class="lead mb-0"><a href="{% url 'register' %}" class="btn-lg btn-success text-white text-decoration-none">Get Started</a></p>
+            <p class="lead mb-0"><a href="{% url 'register' %}"
+                                    class="btn-lg btn-success text-white text-decoration-none">Get Started</a></p>
             {% endif %}
         </div>
     </div>
 
     <div class="row mb-2">
-        <div class="col-md-8">
+        <div class="col-md-8 bg-danger">
             {% for model in page.object_list %}
             <div class="card mb-3">
                 <div class="row g-0">
@@ -45,7 +50,8 @@
                                     href="{% url 'blog_details' model.id %}"
                                     class="btn-sm btn-primary text-decoration-none">Learn More</a></span>
                             </p>
-                            <p class="card-text"><small class="text-muted">Published on {{ model.created|date:"M d, Y" }} | by
+                            <p class="card-text"><small class="text-muted">Published on {{ model.created|date:"M d, Y"
+                                }} | by
                                 <span><a href="{% url 'profile' model.user.id %}">@{{ model.user }}</a></span></small>
                             </p>
                             <span class="badge rounded-pill bg-primary">{{ model.category }}</span>
@@ -60,11 +66,13 @@
             </div>
             {% endfor %}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 bg-primary">
             <div class="position-sticky" style="top: 2rem;">
                 <div class="p-4 mb-3 bg-light rounded">
                     <h4 class="fst-italic">About</h4>
-                    <p class="mb-0">Nulla ac magna suscipit, elementum tellus id, imperdiet nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque arcu eget quam gravida finibus. Ut rutrum enim id imperdiet gravida</p>
+                    <p class="mb-0">Nulla ac magna suscipit, elementum tellus id, imperdiet nisi. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit. Quisque pellentesque arcu eget quam gravida finibus. Ut
+                        rutrum enim id imperdiet gravida</p>
                 </div>
 
                 <div>
@@ -120,32 +128,33 @@
             </div>
         </div>
     </section>
-</main>
-<section class="bg-light">
+    </div>
+    <section class="bg-light">
     <div class="container py-5">
-            <div class="p-4">
-        <div class="row">
-            <div class="col-md-6">
-                <h5>Sign Up for News Feed</h5>
-                <h3>Get the latest news delivered to your inbox!</h3>
-            </div>
-            <div class="col-md-6">
-                <form action="" method="POST">{% csrf_token %}
-                    <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" name="email" placeholder="Email Address..">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-grid gap-2">
-                            <input type="submit" class="btn btn-success" value="Subscribe">
-                        </div>
-                    </div>
+        <div class="p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sign Up for News Feed</h5>
+                    <h3>Get the latest news delivered to your inbox!</h3>
                 </div>
-                </form>
+                <div class="col-md-6">
+                    <form action="" method="POST">{% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" name="email" placeholder="Email Address..">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-grid gap-2">
+                                    <input type="submit" class="btn btn-success" value="Subscribe">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 </section>
+</main>
 
 {% endblock %}
